@@ -380,8 +380,9 @@ const KKBHDashboard = () => {
             "id": "rt-japan",
             "label": "日本",
             "icon": "日",
-            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=e1ec9d2d-1a8b-4c9e-be5c-4dfaef5810ce",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=2e390a4e-1980-4a79-9de7-33d8223f285b",
+            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+            "pattern": "none"
           },
           {
             "id": "rt-china",
@@ -671,15 +672,14 @@ const KKBHDashboard = () => {
                 "icon": "📦",
                 "link": ""
               }
-            ],
-            "pattern": "grid"
+            ]
           },
           {
             "id": "monthly-country",
             "label": "国別",
             "icon": "亜",
             "link": "",
-            "color": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
             "children": [
               {
                 "id": "country-japan",
@@ -753,32 +753,28 @@ const KKBHDashboard = () => {
                 "icon": "韓",
                 "link": ""
               }
-            ],
-            "pattern": "diagonal"
+            ]
           },
           {
             "id": "monthly-tbd1",
             "label": "TBD",
             "icon": "📋",
             "link": "",
-            "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-            "pattern": "vertical"
+            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)"
           },
           {
             "id": "monthly-tbd2",
             "label": "TBD",
             "icon": "📋",
             "link": "",
-            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
-            "pattern": "grid"
+            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
           },
           {
             "id": "monthly-tbd3",
             "label": "TBD",
             "icon": "📋",
             "link": "",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-            "pattern": "vertical"
+            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
           }
         ]
       },
@@ -792,7 +788,7 @@ const KKBHDashboard = () => {
             "label": "基礎KPI",
             "icon": "💡",
             "link": "",
-            "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
             "children": [
               {
                 "id": "basic-press",
@@ -818,15 +814,14 @@ const KKBHDashboard = () => {
                 "icon": "📊",
                 "link": ""
               }
-            ],
-            "pattern": "dots"
+            ]
           },
           {
             "id": "kpi-reliability",
             "label": "信頼度KPI",
             "icon": "🌟",
             "link": "",
-            "color": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
             "children": [
               {
                 "id": "rel-claim",
@@ -870,15 +865,14 @@ const KKBHDashboard = () => {
                 "icon": "📊",
                 "link": ""
               }
-            ],
-            "pattern": "diagonal"
+            ]
           },
           {
             "id": "kpi-macro",
             "label": "マクロ指標",
             "icon": "🔍",
             "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
             "children": [
               {
                 "id": "macro-pmi",
@@ -904,8 +898,7 @@ const KKBHDashboard = () => {
                 "icon": "🎯",
                 "link": ""
               }
-            ],
-            "pattern": "vertical"
+            ]
           }
         ]
       },
@@ -929,6 +922,19 @@ const KKBHDashboard = () => {
             "link": "",
             "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)",
             "pattern": "none"
+          },
+          {
+            "id": "mfg-tdb3",
+            "label": "TDB",
+            "icon": "🏭",
+            "link": "",
+            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+            "pattern": "none"
+          }
+        ]
+      }
+    ]
+  };
           },
           {
             "id": "mfg-tdb3",
