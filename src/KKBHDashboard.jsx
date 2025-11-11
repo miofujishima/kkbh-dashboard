@@ -360,589 +360,576 @@ const KKBHDashboard = () => {
   ];
 
   const initialData = {
-    "title": "KKBH_Global経営ダッシュボード",
-    "backgroundColor": "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
-    "sections": [
+    title: "KKBH_Global経営ダッシュボード",
+    backgroundColor: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
+    sections: [
       {
-        "id": "realtime",
-        "label": "リアルタイム",
-        "subtitle": "(受注モニタ)",
-        "buttons": [
+        id: "realtime",
+        label: "リアルタイム",
+        subtitle: "(受注モニタ)",
+        buttons: [
           {
-            "id": "rt-global",
-            "label": "グローバル",
-            "icon": "🌐",
-            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=62d36826-dde7-47fb-b17e-bca43c7f7196",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
-            "pattern": "none"
+            id: "rt-global",
+            label: "グローバル",
+            icon: "🌐",
+            link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=62d36826-dde7-47fb-b17e-bca43c7f7196",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+            pattern: "none"
           },
           {
-            "id": "rt-japan",
-            "label": "日本",
-            "icon": "日",
-            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=2e390a4e-1980-4a79-9de7-33d8223f285b",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-            "pattern": "none"
+            id: "rt-japan",
+            label: "日本",
+            icon: "日",
+            link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=2e390a4e-1980-4a79-9de7-33d8223f285b",
+            color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+            pattern: "none"
           },
           {
-            "id": "rt-china",
-            "label": "中国",
-            "icon": "中",
-            "link": "",
-            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
-            "children": [
+            id: "rt-china",
+            label: "中国",
+            icon: "中",
+            link: "",
+            color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
+            children: [
               {
-                "id": "rt-china-child-1762771728713",
-                "label": "中国",
-                "icon": "中",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=0dfb85f1-5040-4a9c-ba08-8b8acceca803"
+                id: "rt-china-child-1762771728713",
+                label: "中国",
+                icon: "中",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=0dfb85f1-5040-4a9c-ba08-8b8acceca803"
               },
               {
-                "id": "rt-china-child-1762771757704",
-                "label": "台湾",
-                "icon": "台",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=843b4bfb-2ae6-430a-90a1-04bbadae9a23"
+                id: "rt-china-child-1762771757704",
+                label: "台湾",
+                icon: "台",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=843b4bfb-2ae6-430a-90a1-04bbadae9a23"
               }
             ]
           },
           {
-            "id": "rt-asia",
-            "label": "アジア",
-            "icon": "亜",
-            "link": "",
-            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-            "children": [
+            id: "rt-asia",
+            label: "アジア",
+            icon: "亜",
+            link: "",
+            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            children: [
               {
-                "id": "asia-india",
-                "label": "インド",
-                "icon": "印",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=88824398-f5f3-435a-a61c-e3ab3fa0cc48"
+                id: "asia-india",
+                label: "インド",
+                icon: "印",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=88824398-f5f3-435a-a61c-e3ab3fa0cc48"
               },
               {
-                "id": "asia-vietnam",
-                "label": "ベトナム",
-                "icon": "越",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=1bd565b9-c72b-41b5-9865-986a474f1bac"
+                id: "asia-vietnam",
+                label: "ベトナム",
+                icon: "越",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=1bd565b9-c72b-41b5-9865-986a474f1bac"
               },
               {
-                "id": "asia-malaysia",
-                "label": "マレーシア",
-                "icon": "馬",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=d9ca15c9-06d8-4daa-8260-7b1d04cb7510"
+                id: "asia-malaysia",
+                label: "マレーシア",
+                icon: "馬",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=d9ca15c9-06d8-4daa-8260-7b1d04cb7510"
               },
               {
-                "id": "asia-thailand",
-                "label": "タイ",
-                "icon": "泰",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=8bdee28a-2e85-496a-baa4-9b4426908624"
+                id: "asia-thailand",
+                label: "タイ",
+                icon: "泰",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=8bdee28a-2e85-496a-baa4-9b4426908624"
               },
               {
-                "id": "asia-indonesia",
-                "label": "インドネシア",
-                "icon": "尼",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=58fe03bf-43dc-444e-951e-9a3bec1d7e8d"
+                id: "asia-indonesia",
+                label: "インドネシア",
+                icon: "尼",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=58fe03bf-43dc-444e-951e-9a3bec1d7e8d"
               },
               {
-                "id": "asia-singapore",
-                "label": "シンガポール",
-                "icon": "新",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=1008f624-ca6f-4cd3-9c1b-f5e2f965d381"
+                id: "asia-singapore",
+                label: "シンガポール",
+                icon: "新",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=1008f624-ca6f-4cd3-9c1b-f5e2f965d381"
               },
               {
-                "id": "asia-korea",
-                "label": "韓国",
-                "icon": "韓",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=bf0fc950-e9ff-43cf-8da1-5a29352b9e83"
+                id: "asia-korea",
+                label: "韓国",
+                icon: "韓",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=bf0fc950-e9ff-43cf-8da1-5a29352b9e83"
               }
             ]
           },
           {
-            "id": "rt-europe",
-            "label": "欧州",
-            "icon": "欧",
-            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=10f18cda-3191-4c30-8780-491c39189362",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            "pattern": "none"
+            id: "rt-europe",
+            label: "欧州",
+            icon: "欧",
+            link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=10f18cda-3191-4c30-8780-491c39189362",
+            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+            pattern: "none"
           },
           {
-            "id": "rt-america",
-            "label": "米州",
-            "icon": "米",
-            "link": "",
-            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
-            "children": [
+            id: "rt-america",
+            label: "米州",
+            icon: "米",
+            link: "",
+            color: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)",
+            children: [
               {
-                "id": "rt-america-child-1762771954818",
-                "label": "アメリカ",
-                "icon": "米",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=42fdf4b7-bfc1-45a6-b225-0258aadc10e6"
+                id: "rt-america-child-1762771954818",
+                label: "アメリカ",
+                icon: "米",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=42fdf4b7-bfc1-45a6-b225-0258aadc10e6"
               },
               {
-                "id": "rt-america-child-1762771957858",
-                "label": "メキシコ",
-                "icon": "墨",
-                "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=cf9fc32c-a77c-4c80-9fea-c5a14447645b"
+                id: "rt-america-child-1762771957858",
+                label: "メキシコ",
+                icon: "墨",
+                link: "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=cf9fc32c-a77c-4c80-9fea-c5a14447645b"
               }
             ]
           }
         ]
       },
       {
-        "id": "daily",
-        "label": "日次",
-        "subtitle": "(進捗モニタ)",
-        "buttons": [
+        id: "daily",
+        label: "日次",
+        subtitle: "(進捗モニタ)",
+        buttons: [
           {
-            "id": "daily-global",
-            "label": "グローバル",
-            "icon": "🌐",
-            "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
+            id: "daily-global",
+            label: "グローバル",
+            icon: "🌐",
+            link: "",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
           },
           {
-            "id": "daily-japan",
-            "label": "日本",
-            "icon": "日",
-            "link": "",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+            id: "daily-japan",
+            label: "日本",
+            icon: "日",
+            link: "",
+            color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
           },
           {
-            "id": "daily-china",
-            "label": "中国",
-            "icon": "中",
-            "link": "",
-            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+            id: "daily-china",
+            label: "中国",
+            icon: "中",
+            link: "",
+            color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
           },
           {
-            "id": "daily-asia",
-            "label": "アジア",
-            "icon": "亜",
-            "link": "",
-            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-            "children": [
+            id: "daily-asia",
+            label: "アジア",
+            icon: "亜",
+            link: "",
+            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            children: [
               {
-                "id": "asia-india-d",
-                "label": "印度",
-                "icon": "印",
-                "link": ""
+                id: "asia-india-d",
+                label: "印度",
+                icon: "印",
+                link: ""
               },
               {
-                "id": "asia-vietnam-d",
-                "label": "越南",
-                "icon": "越",
-                "link": ""
+                id: "asia-vietnam-d",
+                label: "越南",
+                icon: "越",
+                link: ""
               },
               {
-                "id": "asia-malaysia-d",
-                "label": "馬",
-                "icon": "馬",
-                "link": ""
+                id: "asia-malaysia-d",
+                label: "馬",
+                icon: "馬",
+                link: ""
               },
               {
-                "id": "asia-thailand-d",
-                "label": "タイ",
-                "icon": "泰",
-                "link": ""
+                id: "asia-thailand-d",
+                label: "タイ",
+                icon: "泰",
+                link: ""
               },
               {
-                "id": "asia-indonesia-d",
-                "label": "尼",
-                "icon": "尼",
-                "link": ""
+                id: "asia-indonesia-d",
+                label: "尼",
+                icon: "尼",
+                link: ""
               },
               {
-                "id": "asia-singapore-d",
-                "label": "新",
-                "icon": "新",
-                "link": ""
+                id: "asia-singapore-d",
+                label: "新",
+                icon: "新",
+                link: ""
               },
               {
-                "id": "asia-korea-d",
-                "label": "韓国",
-                "icon": "韓",
-                "link": ""
+                id: "asia-korea-d",
+                label: "韓国",
+                icon: "韓",
+                link: ""
               }
             ]
           },
           {
-            "id": "daily-europe",
-            "label": "欧州",
-            "icon": "欧",
-            "link": "",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+            id: "daily-europe",
+            label: "欧州",
+            icon: "欧",
+            link: "",
+            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
           },
           {
-            "id": "daily-america",
-            "label": "米州",
-            "icon": "米",
-            "link": "",
-            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
+            id: "daily-america",
+            label: "米州",
+            icon: "米",
+            link: "",
+            color: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
           }
         ]
       },
       {
-        "id": "weekly",
-        "label": "週次",
-        "subtitle": "",
-        "buttons": [
+        id: "weekly",
+        label: "週次",
+        subtitle: "",
+        buttons: [
           {
-            "id": "weekly-customer",
-            "label": "顧客離反モニタ",
-            "icon": "👥",
-            "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
+            id: "weekly-customer",
+            label: "顧客離反モニタ",
+            icon: "👥",
+            link: "",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
           },
           {
-            "id": "weekly-eproduct",
-            "label": "E品モニタ",
-            "icon": "📦",
-            "link": "",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
+            id: "weekly-eproduct",
+            label: "E品モニタ",
+            icon: "📦",
+            link: "",
+            color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
           },
           {
-            "id": "weekly-tbd1",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
+            id: "weekly-tbd1",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
           },
           {
-            "id": "weekly-tbd2",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+            id: "weekly-tbd2",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
           },
           {
-            "id": "weekly-tbd3",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+            id: "weekly-tbd3",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
           },
           {
-            "id": "weekly-tbd4",
-            "label": "TB",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
+            id: "weekly-tbd4",
+            label: "TB",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
           }
         ]
       },
       {
-        "id": "monthly",
-        "label": "月次",
-        "subtitle": "",
-        "buttons": [
+        id: "monthly",
+        label: "月次",
+        subtitle: "",
+        buttons: [
           {
-            "id": "monthly-global",
-            "label": "グローバル",
-            "icon": "🌐",
-            "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
+            id: "monthly-global",
+            label: "グローバル",
+            icon: "🌐",
+            link: "",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
           },
           {
-            "id": "monthly-business",
-            "label": "事業別",
-            "icon": "🏭",
-            "link": "",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-            "children": [
+            id: "monthly-business",
+            label: "事業別",
+            icon: "🏭",
+            link: "",
+            color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+            children: [
               {
-                "id": "biz-press",
-                "label": "プレス",
-                "icon": "🔧",
-                "link": ""
+                id: "biz-press",
+                label: "プレス",
+                icon: "🔧",
+                link: ""
               },
               {
-                "id": "biz-mold",
-                "label": "モールド",
-                "icon": "⚙️",
-                "link": ""
+                id: "biz-mold",
+                label: "モールド",
+                icon: "⚙️",
+                link: ""
               },
               {
-                "id": "biz-special",
-                "label": "特注",
-                "icon": "⚡",
-                "link": ""
+                id: "biz-special",
+                label: "特注",
+                icon: "⚡",
+                link: ""
               },
               {
-                "id": "biz-service",
-                "label": "他サービス",
-                "icon": "📦",
-                "link": ""
+                id: "biz-service",
+                label: "他サービス",
+                icon: "📦",
+                link: ""
               }
             ]
           },
           {
-            "id": "monthly-country",
-            "label": "国別",
-            "icon": "亜",
-            "link": "",
-            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
-            "children": [
+            id: "monthly-country",
+            label: "国別",
+            icon: "亜",
+            link: "",
+            color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
+            children: [
               {
-                "id": "country-japan",
-                "label": "日本",
-                "icon": "日",
-                "link": ""
+                id: "country-japan",
+                label: "日本",
+                icon: "日",
+                link: ""
               },
               {
-                "id": "country-china",
-                "label": "中国",
-                "icon": "中",
-                "link": ""
+                id: "country-china",
+                label: "中国",
+                icon: "中",
+                link: ""
               },
               {
-                "id": "country-india",
-                "label": "インド",
-                "icon": "印",
-                "link": ""
+                id: "country-india",
+                label: "インド",
+                icon: "印",
+                link: ""
               },
               {
-                "id": "country-usa",
-                "label": "米国",
-                "icon": "米",
-                "link": ""
+                id: "country-usa",
+                label: "米国",
+                icon: "米",
+                link: ""
               },
               {
-                "id": "country-eu",
-                "label": "欧",
-                "icon": "欧",
-                "link": ""
+                id: "country-eu",
+                label: "欧",
+                icon: "欧",
+                link: ""
               },
               {
-                "id": "country-taiwan",
-                "label": "台湾",
-                "icon": "台",
-                "link": ""
+                id: "country-taiwan",
+                label: "台湾",
+                icon: "台",
+                link: ""
               },
               {
-                "id": "country-vietnam",
-                "label": "越南",
-                "icon": "越",
-                "link": ""
+                id: "country-vietnam",
+                label: "越南",
+                icon: "越",
+                link: ""
               },
               {
-                "id": "country-malaysia",
-                "label": "馬",
-                "icon": "馬",
-                "link": ""
+                id: "country-malaysia",
+                label: "馬",
+                icon: "馬",
+                link: ""
               },
               {
-                "id": "country-thailand",
-                "label": "タイ",
-                "icon": "泰",
-                "link": ""
+                id: "country-thailand",
+                label: "タイ",
+                icon: "泰",
+                link: ""
               },
               {
-                "id": "country-indonesia",
-                "label": "尼",
-                "icon": "尼",
-                "link": ""
+                id: "country-indonesia",
+                label: "尼",
+                icon: "尼",
+                link: ""
               },
               {
-                "id": "country-singapore",
-                "label": "新",
-                "icon": "新",
-                "link": ""
+                id: "country-singapore",
+                label: "新",
+                icon: "新",
+                link: ""
               },
               {
-                "id": "country-korea",
-                "label": "韓国",
-                "icon": "韓",
-                "link": ""
+                id: "country-korea",
+                label: "韓国",
+                icon: "韓",
+                link: ""
               }
             ]
           },
           {
-            "id": "monthly-tbd1",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)"
+            id: "monthly-tbd1",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
           },
           {
-            "id": "monthly-tbd2",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
+            id: "monthly-tbd2",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
           },
           {
-            "id": "monthly-tbd3",
-            "label": "TBD",
-            "icon": "📋",
-            "link": "",
-            "color": "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
+            id: "monthly-tbd3",
+            label: "TBD",
+            icon: "📋",
+            link: "",
+            color: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
           }
         ]
       },
       {
-        "id": "kpi",
-        "label": "KPI",
-        "subtitle": "",
-        "buttons": [
+        id: "kpi",
+        label: "KPI",
+        subtitle: "",
+        buttons: [
           {
-            "id": "kpi-basic",
-            "label": "基礎KPI",
-            "icon": "💡",
-            "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
-            "children": [
+            id: "kpi-basic",
+            label: "基礎KPI",
+            icon: "💡",
+            link: "",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+            children: [
               {
-                "id": "basic-press",
-                "label": "プレス",
-                "icon": "🔧",
-                "link": ""
+                id: "basic-press",
+                label: "プレス",
+                icon: "🔧",
+                link: ""
               },
               {
-                "id": "basic-mold",
-                "label": "モールド",
-                "icon": "⚙️",
-                "link": ""
+                id: "basic-mold",
+                label: "モールド",
+                icon: "⚙️",
+                link: ""
               },
               {
-                "id": "basic-price",
-                "label": "顧客単価",
-                "icon": "💰",
-                "link": ""
+                id: "basic-price",
+                label: "顧客単価",
+                icon: "💰",
+                link: ""
               },
               {
-                "id": "basic-discount",
-                "label": "値引率",
-                "icon": "📊",
-                "link": ""
+                id: "basic-discount",
+                label: "値引率",
+                icon: "📊",
+                link: ""
               }
             ]
           },
           {
-            "id": "kpi-reliability",
-            "label": "信頼度KPI",
-            "icon": "🌟",
-            "link": "",
-            "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-            "children": [
+            id: "kpi-reliability",
+            label: "信頼度KPI",
+            icon: "🌟",
+            link: "",
+            color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+            children: [
               {
-                "id": "rel-claim",
-                "label": "クレーム発生率",
-                "icon": "⚠️",
-                "link": ""
+                id: "rel-claim",
+                label: "クレーム発生率",
+                icon: "⚠️",
+                link: ""
               },
               {
-                "id": "rel-delay",
-                "label": "納期遅れ率",
-                "icon": "📅",
-                "link": ""
+                id: "rel-delay",
+                label: "納期遅れ率",
+                icon: "📅",
+                link: ""
               },
               {
-                "id": "rel-lp1",
-                "label": "送信LP率大口",
-                "icon": "📈",
-                "link": ""
+                id: "rel-lp1",
+                label: "送信LP率大口",
+                icon: "📈",
+                link: ""
               },
               {
-                "id": "rel-lp2",
-                "label": "送信LP率納短",
-                "icon": "📉",
-                "link": ""
+                id: "rel-lp2",
+                label: "送信LP率納短",
+                icon: "📉",
+                link: ""
               },
               {
-                "id": "rel-stock",
-                "label": "在庫切れ率",
-                "icon": "📦",
-                "link": ""
+                id: "rel-stock",
+                label: "在庫切れ率",
+                icon: "📦",
+                link: ""
               },
               {
-                "id": "rel-ds",
-                "label": "DS額推移",
-                "icon": "💰",
-                "link": ""
+                id: "rel-ds",
+                label: "DS額推移",
+                icon: "💰",
+                link: ""
               },
               {
-                "id": "rel-inventory",
-                "label": "在庫金額推移",
-                "icon": "📊",
-                "link": ""
+                id: "rel-inventory",
+                label: "在庫金額推移",
+                icon: "📊",
+                link: ""
               }
             ]
           },
           {
-            "id": "kpi-macro",
-            "label": "マクロ指標",
-            "icon": "🔍",
-            "link": "",
-            "color": "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
-            "children": [
+            id: "kpi-macro",
+            label: "マクロ指標",
+            icon: "🔍",
+            link: "",
+            color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
+            children: [
               {
-                "id": "macro-pmi",
-                "label": "国別PMI",
-                "icon": "📈",
-                "link": ""
+                id: "macro-pmi",
+                label: "国別PMI",
+                icon: "📈",
+                link: ""
               },
               {
-                "id": "macro-auto",
-                "label": "国別自動車生産台数",
-                "icon": "🚗",
-                "link": ""
+                id: "macro-auto",
+                label: "国別自動車生産台数",
+                icon: "🚗",
+                link: ""
               },
               {
-                "id": "macro-market",
-                "label": "国別金型市場規模",
-                "icon": "🏭",
-                "link": ""
+                id: "macro-market",
+                label: "国別金型市場規模",
+                icon: "🏭",
+                link: ""
               },
               {
-                "id": "macro-compete",
-                "label": "競合比較",
-                "icon": "🎯",
-                "link": ""
+                id: "macro-compete",
+                label: "競合比較",
+                icon: "🎯",
+                link: ""
               }
             ]
           }
         ]
       },
       {
-        "id": "manufacturing",
-        "label": "製造",
-        "subtitle": "",
-        "buttons": [
+        id: "manufacturing",
+        label: "製造",
+        subtitle: "",
+        buttons: [
           {
-            "id": "mfg-tdb1",
-            "label": "TDB",
-            "icon": "🏭",
-            "link": "",
-            "color": "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
-            "pattern": "none"
+            id: "mfg-tdb1",
+            label: "TDB",
+            icon: "🏭",
+            link: "",
+            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+            pattern: "none"
           },
           {
-            "id": "mfg-tdb2",
-            "label": "TDB",
-            "icon": "🏭",
-            "link": "",
-            "color": "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-            "pattern": "none"
+            id: "mfg-tdb2",
+            label: "TDB",
+            icon: "🏭",
+            link: "",
+            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+            pattern: "none"
           },
           {
-            "id": "mfg-tdb3",
-            "label": "TDB",
-            "icon": "🏭",
-            "link": "",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            "pattern": "none"
-          }
-        ]
-      }
-    ]
-  };
-          },
-          {
-            "id": "mfg-tdb3",
-            "label": "TDB",
-            "icon": "🏭",
-            "link": "",
-            "color": "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            "pattern": "none"
+            id: "mfg-tdb3",
+            label: "TDB",
+            icon: "🏭",
+            link: "",
+            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+            pattern: "none"
           }
         ]
       }
@@ -1182,9 +1169,10 @@ const KKBHDashboard = () => {
     return patterns[pattern] || '';
   };
 
-  const getButtonBackground = (color, pattern, hasLink) => {
-    // リンクがない場合はグレーに
-    if (!hasLink) {
+  const getButtonBackground = (color, pattern, hasLink, hasChildren) => {
+    // 子メニューがある場合は、親のリンクがなくても通常の色
+    // 子メニューもリンクもない場合のみグレーに
+    if (!hasLink && !hasChildren) {
       const greyColor = 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)';
       const patternStyle = getPatternStyle(pattern);
       if (pattern === 'none' || !pattern) {
@@ -1196,7 +1184,7 @@ const KKBHDashboard = () => {
       return `${patternStyle}, ${greyColor}`;
     }
     
-    // リンクがある場合は通常の色
+    // リンクがある、または子メニューがある場合は通常の色
     const patternStyle = getPatternStyle(pattern);
     if (pattern === 'none' || !pattern) {
       return color;
@@ -1768,7 +1756,12 @@ const KKBHDashboard = () => {
                       }}
                       className={`w-full ${isFullscreen ? 'h-16' : 'h-20'} rounded-lg font-bold ${isFullscreen ? 'text-base' : 'text-lg'} shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 relative overflow-visible border border-white/10 flex flex-col items-center justify-center gap-1`}
                       style={{ 
-                        background: getButtonBackground(button.color, button.pattern || 'none', button.link && button.link.trim() !== ''),
+                        background: getButtonBackground(
+                          button.color, 
+                          button.pattern || 'none', 
+                          button.link && button.link.trim() !== '',
+                          button.children && button.children.length > 0
+                        ),
                         backgroundSize: button.pattern === 'dots' ? '15px 15px' : 'auto',
                         cursor: (isAdminMode && !isPreviewMode) ? 'move' : 'pointer',
                         padding: '8px'
@@ -1781,7 +1774,9 @@ const KKBHDashboard = () => {
                         />
                       )}
                       {button.icon && <span className="text-2xl">{button.icon}</span>}
-                      <span className="relative z-10 text-white drop-shadow-lg" style={{ textDecoration: (!button.link || button.link.trim() === '') ? 'line-through' : 'none' }}>{button.label}</span>
+                      <span className="relative z-10 text-white drop-shadow-lg" style={{ 
+                        textDecoration: (!button.link || button.link.trim() === '') && (!button.children || button.children.length === 0) ? 'line-through' : 'none' 
+                      }}>{button.label}</span>
                       {(isAdminMode && !isPreviewMode) && (
                         <Edit2 
                           size={18} 
