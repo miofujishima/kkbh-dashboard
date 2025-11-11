@@ -1075,6 +1075,14 @@ const KKBHDashboard = () => {
     setCloseMenuTimer(timer);
   };
 
+  const handleSubmenuMouseEnter = () => {
+    // 子メニュー上にマウスが来たらタイマーをキャンセル
+    if (closeMenuTimer) {
+      clearTimeout(closeMenuTimer);
+      setCloseMenuTimer(null);
+    }
+  };
+
   const handleSubmenuMouseLeave = () => {
     // 800ms後に閉じる（誤操作防止）
     const timer = setTimeout(() => {
@@ -1170,9 +1178,11 @@ const KKBHDashboard = () => {
   };
 
   const getButtonBackground = (color, pattern, hasLink, hasChildren) => {
-    // 子メニューがある場合は、親のリンクがなくても通常の色
-    // 子メニューもリンクもない場合のみグレーに
-    if (!hasLink && !hasChildren) {
+    // 子メニューにリンクがあるかチェック（子メニューがある場合）
+    const hasChildrenWithLinks = hasChildren && hasChildren.some(child => child.link && child.link.trim() !== '');
+    
+    // 自分のリンクも子メニューのリンクもない場合のみグレーに
+    if (!hasLink && !hasChildrenWithLinks) {
       const greyColor = 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)';
       const patternStyle = getPatternStyle(pattern);
       if (pattern === 'none' || !pattern) {
@@ -1184,7 +1194,7 @@ const KKBHDashboard = () => {
       return `${patternStyle}, ${greyColor}`;
     }
     
-    // リンクがある、または子メニューがある場合は通常の色
+    // リンクがある、または子メニューにリンクがある場合は通常の色
     const patternStyle = getPatternStyle(pattern);
     if (pattern === 'none' || !pattern) {
       return color;
@@ -1760,7 +1770,7 @@ const KKBHDashboard = () => {
                           button.color, 
                           button.pattern || 'none', 
                           button.link && button.link.trim() !== '',
-                          button.children && button.children.length > 0
+                          button.children
                         ),
                         backgroundSize: button.pattern === 'dots' ? '15px 15px' : 'auto',
                         cursor: (isAdminMode && !isPreviewMode) ? 'move' : 'pointer',
@@ -1775,7 +1785,7 @@ const KKBHDashboard = () => {
                       )}
                       {button.icon && <span className="text-2xl">{button.icon}</span>}
                       <span className="relative z-10 text-white drop-shadow-lg" style={{ 
-                        textDecoration: (!button.link || button.link.trim() === '') && (!button.children || button.children.length === 0) ? 'line-through' : 'none' 
+                        textDecoration: (!button.link || button.link.trim() === '') && (!button.children || !button.children.some(c => c.link && c.link.trim() !== '')) ? 'line-through' : 'none' 
                       }}>{button.label}</span>
                       {(isAdminMode && !isPreviewMode) && (
                         <Edit2 
@@ -1868,9 +1878,15 @@ const KKBHDashboard = () => {
                     e.stopPropagation();
                     handleButtonClick(child.link);
                   }}
-                  className="w-full px-5 py-2.5 text-lg font-bold text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all text-left shadow-md hover:shadow-lg transform hover:scale-102 flex items-center gap-3"
+                  className="w-full px-5 py-2.5 text-lg font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all text-left shadow-md hover:shadow-lg transform hover:scale-102 flex items-center gap-3"
+                  style={{
+                    color: (!child.link || child.link.trim() === '') ? 'rgba(255, 255, 255, 0.5)' : 'white',
+                    textDecoration: (!child.link || child.link.trim() === '') ? 'line-through' : 'none'
+                  }}
                 >
-                  {child.icon && <span className="text-2xl">{child.icon}</span>}
+                  {child.icon && <span className="text-2xl" style={{
+                    opacity: (!child.link || child.link.trim() === '') ? 0.5 : 1
+                  }}>{child.icon}</span>}
                   <span>{child.label}</span>
                 </button>
               ))}
