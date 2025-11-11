@@ -1076,20 +1076,24 @@ const KKBHDashboard = () => {
     if (relatedTarget && relatedTarget.closest('.submenu-container')) {
       return;
     }
-    // 800ms後に閉じる（マウス移動の余裕を持たせる）
+    // 同じ親ボタンのグループ内にいる場合は閉じない
+    if (relatedTarget && relatedTarget.closest(`[data-button-id="${hoveredButton}"]`)) {
+      return;
+    }
+    // 1000ms後に閉じる（より長い余裕を持たせる）
     const timer = setTimeout(() => {
       setHoveredButton(null);
       setSubmenuPosition(null);
-    }, 800);
+    }, 1000);
     setCloseMenuTimer(timer);
   };
 
   const handleSubmenuMouseLeave = () => {
-    // 600ms後に閉じる（誤操作防止）
+    // 800ms後に閉じる（誤操作防止）
     const timer = setTimeout(() => {
       setHoveredButton(null);
       setSubmenuPosition(null);
-    }, 600);
+    }, 800);
     setCloseMenuTimer(timer);
   };
 
@@ -1178,7 +1182,21 @@ const KKBHDashboard = () => {
     return patterns[pattern] || '';
   };
 
-  const getButtonBackground = (color, pattern) => {
+  const getButtonBackground = (color, pattern, hasLink) => {
+    // リンクがない場合はグレーに
+    if (!hasLink) {
+      const greyColor = 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)';
+      const patternStyle = getPatternStyle(pattern);
+      if (pattern === 'none' || !pattern) {
+        return greyColor;
+      }
+      if (pattern === 'dots') {
+        return `${patternStyle}, ${greyColor}`;
+      }
+      return `${patternStyle}, ${greyColor}`;
+    }
+    
+    // リンクがある場合は通常の色
     const patternStyle = getPatternStyle(pattern);
     if (pattern === 'none' || !pattern) {
       return color;
@@ -1750,7 +1768,7 @@ const KKBHDashboard = () => {
                       }}
                       className={`w-full ${isFullscreen ? 'h-16' : 'h-20'} rounded-lg font-bold ${isFullscreen ? 'text-base' : 'text-lg'} shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 relative overflow-visible border border-white/10 flex flex-col items-center justify-center gap-1`}
                       style={{ 
-                        background: getButtonBackground(button.color, button.pattern || 'none'),
+                        background: getButtonBackground(button.color, button.pattern || 'none', button.link && button.link.trim() !== ''),
                         backgroundSize: button.pattern === 'dots' ? '15px 15px' : 'auto',
                         cursor: (isAdminMode && !isPreviewMode) ? 'move' : 'pointer',
                         padding: '8px'
@@ -1763,7 +1781,7 @@ const KKBHDashboard = () => {
                         />
                       )}
                       {button.icon && <span className="text-2xl">{button.icon}</span>}
-                      <span className="relative z-10 text-white drop-shadow-lg">{button.label}</span>
+                      <span className="relative z-10 text-white drop-shadow-lg" style={{ textDecoration: (!button.link || button.link.trim() === '') ? 'line-through' : 'none' }}>{button.label}</span>
                       {(isAdminMode && !isPreviewMode) && (
                         <Edit2 
                           size={18} 
