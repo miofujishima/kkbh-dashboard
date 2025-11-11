@@ -361,7 +361,7 @@ const KKBHDashboard = () => {
 
   const initialData = {
     title: "KKBH_Global経営ダッシュボード",
-    backgroundColor: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
+    backgroundColor: "linear-gradient(135deg, #1f2937 0%, #111827 50%, #030712 100%)",
     sections: [
       {
         id: "realtime",
@@ -1784,9 +1784,7 @@ const KKBHDashboard = () => {
                         />
                       )}
                       {button.icon && <span className="text-2xl">{button.icon}</span>}
-                      <span className="relative z-10 text-white drop-shadow-lg" style={{ 
-                        textDecoration: (!button.link || button.link.trim() === '') && (!button.children || !button.children.some(c => c.link && c.link.trim() !== '')) ? 'line-through' : 'none' 
-                      }}>{button.label}</span>
+                      <span className="relative z-10 text-white drop-shadow-lg">{button.label}</span>
                       {(isAdminMode && !isPreviewMode) && (
                         <Edit2 
                           size={18} 
@@ -1880,8 +1878,7 @@ const KKBHDashboard = () => {
                   }}
                   className="w-full px-5 py-2.5 text-lg font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all text-left shadow-md hover:shadow-lg transform hover:scale-102 flex items-center gap-3"
                   style={{
-                    color: (!child.link || child.link.trim() === '') ? 'rgba(255, 255, 255, 0.5)' : 'white',
-                    textDecoration: (!child.link || child.link.trim() === '') ? 'line-through' : 'none'
+                    color: (!child.link || child.link.trim() === '') ? 'rgba(255, 255, 255, 0.5)' : 'white'
                   }}
                 >
                   {child.icon && <span className="text-2xl" style={{
