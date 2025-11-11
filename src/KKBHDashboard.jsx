@@ -909,7 +909,7 @@ const KKBHDashboard = () => {
         buttons: [
           {
             id: "mfg-tdb1",
-            label: "TDB",
+            label: "TBD",
             icon: "🏭",
             link: "",
             color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
@@ -917,7 +917,7 @@ const KKBHDashboard = () => {
           },
           {
             id: "mfg-tdb2",
-            label: "TDB",
+            label: "TBD",
             icon: "🏭",
             link: "",
             color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
@@ -925,7 +925,7 @@ const KKBHDashboard = () => {
           },
           {
             id: "mfg-tdb3",
-            label: "TDB",
+            label: "TBD",
             icon: "🏭",
             link: "",
             color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
