@@ -380,7 +380,7 @@ const KKBHDashboard = () => {
             "id": "rt-japan",
             "label": "日本",
             "icon": "日",
-            "link": "",
+            "link": "https://app.powerbi.com/links/lrESHXlfVP?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=e1ec9d2d-1a8b-4c9e-be5c-4dfaef5810ce",
             "color": "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)"
           },
           {
