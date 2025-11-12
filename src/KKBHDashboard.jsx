@@ -22,6 +22,8 @@ const KKBHDashboard = () => {
   const [showIconPicker, setShowIconPicker] = useState(false);
   const [closeMenuTimer, setCloseMenuTimer] = useState(null);
   const [showSaveSuccessDialog, setShowSaveSuccessDialog] = useState(false);
+  const [clickStats, setClickStats] = useState({});
+
 
   const ADMIN_PASSWORD = 'msmdashboard';
 
@@ -622,7 +624,7 @@ const KKBHDashboard = () => {
           },
           {
             id: "weekly-tbd4",
-            label: "TB",
+            label: "TBD",
             icon: "📋",
             link: "",
             color: "linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
@@ -677,7 +679,7 @@ const KKBHDashboard = () => {
           {
             id: "monthly-country",
             label: "国別",
-            icon: "亜",
+            icon: "🌍",
             link: "",
             color: "linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",
             children: [
@@ -757,15 +759,15 @@ const KKBHDashboard = () => {
           },
           {
             id: "monthly-tbd1",
-            label: "TBD",
-            icon: "📋",
+            label: "顧客別",
+            icon: "👥",
             link: "",
             color: "linear-gradient(135deg, #10b981 0%, #059669 100%)"
           },
           {
             id: "monthly-tbd2",
-            label: "TBD",
-            icon: "📋",
+            label: "商品別",
+            icon: "📦",
             link: "",
             color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
           },
@@ -951,6 +953,12 @@ const KKBHDashboard = () => {
         setDashboardData(initialData);
         addToHistory(initialData);
       }
+      
+      // クリック統計を読み込む
+      const savedStats = localStorage.getItem('kkbh-dashboard-click-stats');
+      if (savedStats) {
+        setClickStats(JSON.parse(savedStats));
+      }
     } catch (error) {
       setDashboardData(initialData);
       addToHistory(initialData);
@@ -1033,8 +1041,22 @@ const KKBHDashboard = () => {
     }
   };
 
-  const handleButtonClick = (link) => {
+  const handleButtonClick = (link, buttonId) => {
     if (link && !isAdminMode && !isPreviewMode) {
+      // クリック統計を記録
+      const newStats = { ...clickStats };
+      if (!newStats[buttonId]) {
+        newStats[buttonId] = {
+          count: 0,
+          lastClicked: null,
+          firstClicked: new Date().toISOString()
+        };
+      }
+      newStats[buttonId].count += 1;
+      newStats[buttonId].lastClicked = new Date().toISOString();
+      setClickStats(newStats);
+      localStorage.setItem('kkbh-dashboard-click-stats', JSON.stringify(newStats));
+      
       // 新しいタブでリンクを開く
       window.open(link, '_blank', 'noopener,noreferrer');
     }
@@ -1063,15 +1085,25 @@ const KKBHDashboard = () => {
     if (relatedTarget && relatedTarget.closest('.submenu-container')) {
       return;
     }
-    // 同じ親ボタンのグループ内にいる場合は閉じない
-    if (relatedTarget && relatedTarget.closest(`[data-button-id="${hoveredButton}"]`)) {
-      return;
+    // 他の子メニュー付きボタンに移動する場合は、そちらの処理に任せる（閉じない）
+    const targetButton = relatedTarget?.closest('[data-button-id]');
+    if (targetButton) {
+      const targetButtonId = targetButton.getAttribute('data-button-id');
+      // 子メニューがあるボタンへの移動かチェック
+      const hasChildren = dashboardData?.sections
+        ?.flatMap(s => s.buttons)
+        ?.find(b => b.id === targetButtonId)
+        ?.children?.length > 0;
+      if (hasChildren) {
+        // 子メニューがあるボタンへの移動なので、閉じない（新しいメニューが開く）
+        return;
+      }
     }
-    // 1000ms後に閉じる（より長い余裕を持たせる）
+    // 子メニューがないボタンや空白部分への移動の場合は閉じる
     const timer = setTimeout(() => {
       setHoveredButton(null);
       setSubmenuPosition(null);
-    }, 1000);
+    }, 300);
     setCloseMenuTimer(timer);
   };
 
@@ -1084,11 +1116,11 @@ const KKBHDashboard = () => {
   };
 
   const handleSubmenuMouseLeave = () => {
-    // 800ms後に閉じる（誤操作防止）
+    // 子メニューから離れた場合も、他のボタンへの移動かチェック
     const timer = setTimeout(() => {
       setHoveredButton(null);
       setSubmenuPosition(null);
-    }, 800);
+    }, 300);
     setCloseMenuTimer(timer);
   };
 
@@ -1761,7 +1793,7 @@ const KKBHDashboard = () => {
                         if (isAdminMode && !isPreviewMode) {
                           openEditDialog(section.id, button);
                         } else {
-                          handleButtonClick(button.link);
+                          handleButtonClick(button.link, button.id);
                         }
                       }}
                       className={`w-full ${isFullscreen ? 'h-16' : 'h-20'} rounded-lg font-bold ${isFullscreen ? 'text-base' : 'text-lg'} shadow-lg hover:shadow-2xl transition-all transform hover:scale-105 relative overflow-visible border border-white/10 flex flex-col items-center justify-center gap-1`}
@@ -1874,7 +1906,7 @@ const KKBHDashboard = () => {
                   key={child.id}
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleButtonClick(child.link);
+                    handleButtonClick(child.link, child.id);
                   }}
                   className="w-full px-5 py-2.5 text-lg font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all text-left shadow-md hover:shadow-lg transform hover:scale-102 flex items-center gap-3"
                   style={{
