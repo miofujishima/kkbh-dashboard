@@ -20,9 +20,9 @@ const KKBHDashboard = () => {
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [editingSection, setEditingSection] = useState(null);
   const [showIconPicker, setShowIconPicker] = useState(false);
-  const [closeMenuTimer, setCloseMenuTimer] = useState(null);
   const [showSaveSuccessDialog, setShowSaveSuccessDialog] = useState(false);
   const [clickStats, setClickStats] = useState({});
+  const [expandedMenu, setExpandedMenu] = useState(null);
 
 
   const ADMIN_PASSWORD = 'msmdashboard';
@@ -1062,66 +1062,22 @@ const KKBHDashboard = () => {
     }
   };
 
-  const handleMouseEnter = (buttonId, event) => {
-    if (!displayMode) return;
-    // 既存のタイマーをキャンセル
-    if (closeMenuTimer) {
-      clearTimeout(closeMenuTimer);
-      setCloseMenuTimer(null);
-    }
-    setHoveredButton(buttonId);
-    const rect = event.currentTarget.getBoundingClientRect();
-    setSubmenuPosition({
-      left: rect.left,
-      top: rect.bottom + 8,
-      buttonId: buttonId
-    });
-  };
-
-  const handleMouseLeave = (event) => {
-    if (!displayMode) return;
-    // マウスがサブメニューに移動する場合は閉じない
-    const relatedTarget = event.relatedTarget;
-    if (relatedTarget && relatedTarget.closest('.submenu-container')) {
-      return;
-    }
-    // 他の子メニュー付きボタンに移動する場合は、そちらの処理に任せる（閉じない）
-    const targetButton = relatedTarget?.closest('[data-button-id]');
-    if (targetButton) {
-      const targetButtonId = targetButton.getAttribute('data-button-id');
-      // 子メニューがあるボタンへの移動かチェック
-      const hasChildren = dashboardData?.sections
-        ?.flatMap(s => s.buttons)
-        ?.find(b => b.id === targetButtonId)
-        ?.children?.length > 0;
-      if (hasChildren) {
-        // 子メニューがあるボタンへの移動なので、閉じない（新しいメニューが開く）
-        return;
-      }
-    }
-    // 子メニューがないボタンや空白部分への移動の場合は閉じる
-    const timer = setTimeout(() => {
-      setHoveredButton(null);
+  const handleToggleSubmenu = (buttonId, event) => {
+    event.stopPropagation(); // 親ボタンのクリックを防ぐ
+    if (expandedMenu === buttonId) {
+      // 既に開いている場合は閉じる
+      setExpandedMenu(null);
       setSubmenuPosition(null);
-    }, 300);
-    setCloseMenuTimer(timer);
-  };
-
-  const handleSubmenuMouseEnter = () => {
-    // 子メニュー上にマウスが来たらタイマーをキャンセル
-    if (closeMenuTimer) {
-      clearTimeout(closeMenuTimer);
-      setCloseMenuTimer(null);
+    } else {
+      // 開く
+      const rect = event.currentTarget.closest('button').getBoundingClientRect();
+      setExpandedMenu(buttonId);
+      setSubmenuPosition({
+        left: rect.left,
+        top: rect.bottom + 8,
+        buttonId: buttonId
+      });
     }
-  };
-
-  const handleSubmenuMouseLeave = () => {
-    // 子メニューから離れた場合も、他のボタンへの移動かチェック
-    const timer = setTimeout(() => {
-      setHoveredButton(null);
-      setSubmenuPosition(null);
-    }, 300);
-    setCloseMenuTimer(timer);
   };
 
   const openEditDialog = (sectionId, button, isChild = false, parentId = null, childIndex = null) => {
@@ -1781,14 +1737,10 @@ const KKBHDashboard = () => {
                     onDragStart={(e) => handleDragStart(e, section.id, buttonIndex)}
                     onDragOver={handleDragOver}
                     onDrop={(e) => handleDrop(e, section.id, buttonIndex)}
-                    onMouseEnter={(e) => button.children && handleMouseEnter(button.id, e)}
-                    onMouseLeave={handleMouseLeave}
                     style={{ padding: '4px' }}
                   >
                     <button
                       data-button-id={button.id}
-                      onMouseEnter={(e) => button.children && handleMouseEnter(button.id, e)}
-                      onMouseLeave={handleMouseLeave}
                       onClick={() => {
                         if (isAdminMode && !isPreviewMode) {
                           openEditDialog(section.id, button);
@@ -1817,6 +1769,18 @@ const KKBHDashboard = () => {
                       )}
                       {button.icon && <span className="text-2xl">{button.icon}</span>}
                       <span className="relative z-10 text-white drop-shadow-lg">{button.label}</span>
+                      
+                      {/* 子メニューがある場合は▼ボタンを表示 */}
+                      {button.children && button.children.length > 0 && !isAdminMode && (
+                        <button
+                          onClick={(e) => handleToggleSubmenu(button.id, e)}
+                          className="absolute bottom-1 right-1 text-white/90 hover:text-white hover:bg-white/30 rounded px-2 py-1 transition-all z-20 shadow-lg"
+                          style={{ fontSize: '16px', fontWeight: 'bold' }}
+                        >
+                          {expandedMenu === button.id ? '▲' : '▼'}
+                        </button>
+                      )}
+                      
                       {(isAdminMode && !isPreviewMode) && (
                         <Edit2 
                           size={18} 
@@ -1879,7 +1843,7 @@ const KKBHDashboard = () => {
         </div>
       </div>
 
-      {hoveredButton && submenuPosition && displayMode && (
+      {expandedMenu && submenuPosition && displayMode && (
         <div 
           className="fixed bg-gray-800/95 backdrop-blur-sm rounded-xl shadow-2xl p-3 min-w-[280px] border border-gray-700 animate-slideDown submenu-container"
           style={{
@@ -1888,29 +1852,37 @@ const KKBHDashboard = () => {
             top: `${submenuPosition.top}px`,
             pointerEvents: 'auto'
           }}
-          onMouseEnter={() => {
-            // サブメニューに入ったらタイマーをキャンセル
-            if (closeMenuTimer) {
-              clearTimeout(closeMenuTimer);
-              setCloseMenuTimer(null);
-            }
-          }}
-          onMouseLeave={handleSubmenuMouseLeave}
         >
           <div className="space-y-0.5">
             {dashboardData.sections
               .flatMap(s => s.buttons)
-              .find(b => b.id === hoveredButton)
+              .find(b => b.id === expandedMenu)
               ?.children?.map((child) => (
                 <button
                   key={child.id}
                   onClick={(e) => {
                     e.stopPropagation();
                     handleButtonClick(child.link, child.id);
+                    // クリック後は子メニューを閉じる
+                    setExpandedMenu(null);
+                    setSubmenuPosition(null);
                   }}
-                  className="w-full px-5 py-2.5 text-lg font-bold hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 rounded-lg transition-all text-left shadow-md hover:shadow-lg transform hover:scale-102 flex items-center gap-3"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(to right, #2563eb, #9333ea)';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(55, 65, 81, 0.3)';
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                  }}
+                  className="w-full px-5 py-2.5 text-lg font-bold rounded-lg text-left flex items-center gap-3 cursor-pointer"
                   style={{
-                    color: (!child.link || child.link.trim() === '') ? 'rgba(255, 255, 255, 0.5)' : 'white'
+                    background: 'rgba(55, 65, 81, 0.3)',
+                    color: (!child.link || child.link.trim() === '') ? 'rgba(255, 255, 255, 0.5)' : 'white',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                   }}
                 >
                   {child.icon && <span className="text-2xl" style={{
