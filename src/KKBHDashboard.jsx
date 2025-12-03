@@ -602,16 +602,40 @@ const KKBHDashboard = () => {
             color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
             children: [
               {
+                id: "eproduct-sales",
+                label: "売上",
+                icon: "💰",
+                link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/4a7e3466-005a-4162-bd4a-bf9d034bd31c?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=d7682def-cdd5-4355-a7eb-656011c7eafb"
+              },
+              {
+                id: "eproduct-sales-customers",
+                label: "売上顧客数&粗利",
+                icon: "👥",
+                link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/4a7e3466-005a-4162-bd4a-bf9d034bd31c?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare"
+              },
+              {
+                id: "eproduct-sales-press-mold",
+                label: "売上プレス/モールド",
+                icon: "🔧",
+                link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/4a7e3466-005a-4162-bd4a-bf9d034bd31c?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=44bab88a-a27e-4575-bc32-d4381ea9ce40"
+              },
+              {
                 id: "eproduct-order",
                 label: "受注",
                 icon: "📝",
                 link: ""
               },
               {
-                id: "eproduct-sales",
-                label: "売上",
-                icon: "💰",
-                link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/4a7e3466-005a-4162-bd4a-bf9d034bd31c?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=5162fc0d-db1e-41d7-907b-1d2fcaa07c9b"
+                id: "eproduct-order-customers",
+                label: "受注顧客数&粗利",
+                icon: "👥",
+                link: ""
+              },
+              {
+                id: "eproduct-order-press-mold",
+                label: "受注プレス/モールド",
+                icon: "🔧",
+                link: ""
               }
             ]
           },
