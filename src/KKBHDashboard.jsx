@@ -587,13 +587,13 @@ const KKBHDashboard = () => {
         label: "週次",
         subtitle: "",
         buttons: [
-          {
-            id: "weekly-customer",
-            label: "顧客離反モニタ",
-            icon: "👥",
-            link: "",
-            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
-          },
+{
+  id: "weekly-customer",
+  label: "大口受注見積レポート",
+  icon: "👥",
+  link: "",
+  color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
+},
           {
             id: "weekly-eproduct",
             label: "E品モニタ",
@@ -818,6 +818,45 @@ const KKBHDashboard = () => {
           }
         ]
       },
+{
+  id: "abc",
+  label: "ABC",
+  subtitle: "",
+  buttons: [
+    {
+      id: "abc-overall",
+      label: "全体感集計",
+      icon: "📊",
+      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
+      color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+      pattern: "none"
+    },
+    {
+      id: "abc-division",
+      label: "事業部別",
+      icon: "🏢",
+      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=399f0be4-720b-445c-b40d-ef60ce044c43",
+      color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+      pattern: "none"
+    },
+    {
+      id: "abc-jurisdiction",
+      label: "所管別",
+      icon: "🗂️",
+      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=22b32dfd-a4d7-497b-9417-f66d43954c9a",
+      color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+      pattern: "none"
+    },
+    {
+      id: "abc-monthly",
+      label: "年月別",
+      icon: "📅",
+      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=954b2af7-f890-4dc3-bb4a-9dcff442a8dd",
+      color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+      pattern: "none"
+    }
+  ]
+},
       {
         id: "kpi",
         label: "KPI",
@@ -942,37 +981,37 @@ const KKBHDashboard = () => {
           }
         ]
       },
-      {
-        id: "manufacturing",
-        label: "製造",
-        subtitle: "",
-        buttons: [
-          {
-            id: "mfg-tdb1",
-            label: "TBD",
-            icon: "🏭",
-            link: "",
-            color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
-            pattern: "none"
-          },
-          {
-            id: "mfg-tdb2",
-            label: "TBD",
-            icon: "🏭",
-            link: "",
-            color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-            pattern: "none"
-          },
-          {
-            id: "mfg-tdb3",
-            label: "TBD",
-            icon: "🏭",
-            link: "",
-            color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            pattern: "none"
-          }
-        ]
-      }
+{
+  id: "manufacturing",
+  label: "製造",
+  subtitle: "",
+  buttons: [
+    {
+      id: "mfg-industry",
+      label: "業種一覧",
+      icon: "📋",
+      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
+      color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+      pattern: "none"
+    },
+    {
+      id: "mfg-tcs",
+      label: "TCS",
+      icon: "🔧",
+      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=53646564-a4bd-4ff5-9b4d-05f06241ac2c",
+      color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+      pattern: "none"
+    },
+    {
+      id: "mfg-reliability",
+      label: "信頼度",
+      icon: "⭐",
+      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=3399a524-d023-4ad1-beb1-4aca853f49e6",
+      color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+      pattern: "none"
+    }
+  ]
+}
     ]
   };
 
