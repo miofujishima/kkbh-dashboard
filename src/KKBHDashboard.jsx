@@ -671,7 +671,7 @@ const KKBHDashboard = () => {
       },
       {
         id: "monthly",
-        label: "月次",
+        label: "現場分析",
         subtitle: "",
         buttons: [
           {
