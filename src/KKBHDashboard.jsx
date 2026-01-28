@@ -819,12 +819,12 @@ const KKBHDashboard = () => {
         ]
       },
 {
-  id: "abc",
-  label: "ABC",
+  id: "bunseki",
+  label: "月次分析",
   subtitle: "",
   buttons: [
     {
-      id: "abc-overall",
+      id: "bunseki-overall",
       label: "全体感集計",
       icon: "📊",
       link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
@@ -832,7 +832,7 @@ const KKBHDashboard = () => {
       pattern: "none"
     },
     {
-      id: "abc-division",
+      id: "bunseki-division",
       label: "事業部別",
       icon: "🏢",
       link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=399f0be4-720b-445c-b40d-ef60ce044c43",
@@ -840,7 +840,7 @@ const KKBHDashboard = () => {
       pattern: "none"
     },
     {
-      id: "abc-jurisdiction",
+      id: "bunseki-jurisdiction",
       label: "所管別",
       icon: "🗂️",
       link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=22b32dfd-a4d7-497b-9417-f66d43954c9a",
@@ -848,7 +848,7 @@ const KKBHDashboard = () => {
       pattern: "none"
     },
     {
-      id: "abc-monthly",
+      id: "bunseki-monthly",
       label: "年月別",
       icon: "📅",
       link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=954b2af7-f890-4dc3-bb4a-9dcff442a8dd",
