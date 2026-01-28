@@ -498,7 +498,7 @@ const KKBHDashboard = () => {
             id: "daily-global",
             label: "グローバル",
             icon: "🌐",
-            link: "",
+            link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f6ac51ab-7dd1-420d-86fa-655a0e37d7fd?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
             color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
           },
           {
@@ -591,7 +591,7 @@ const KKBHDashboard = () => {
   id: "weekly-customer",
   label: "大口受注見積レポート",
   icon: "👥",
-  link: "",
+  link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/33709fa1-14b9-4085-bd39-8abae8cd9d90?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
   color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)"
 },
           {
