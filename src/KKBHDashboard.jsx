@@ -990,7 +990,7 @@ const KKBHDashboard = () => {
       id: "mfg-industry",
       label: "業種一覧",
       icon: "📋",
-      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
+      link: "https://app.powerbi.com/groups/d214103e-35e4-4091-a11c-017e6dc1aaf7/reports/e995b561-cd1b-4cc8-adb4-8130db75037a?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
       color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
       pattern: "none"
     },
@@ -998,7 +998,7 @@ const KKBHDashboard = () => {
       id: "mfg-tcs",
       label: "TCS",
       icon: "🔧",
-      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=53646564-a4bd-4ff5-9b4d-05f06241ac2c",
+      link: "https://app.powerbi.com/groups/d214103e-35e4-4091-a11c-017e6dc1aaf7/reports/e995b561-cd1b-4cc8-adb4-8130db75037a?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=a7c23565-1f99-4f55-9428-58bcc0247d5d",
       color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
       pattern: "none"
     },
@@ -1006,7 +1006,7 @@ const KKBHDashboard = () => {
       id: "mfg-reliability",
       label: "信頼度",
       icon: "⭐",
-      link: "https://app.powerbi.com/groups/me/reports/9d6a6a2a-57aa-4013-b08d-d3309b3530d4?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=3399a524-d023-4ad1-beb1-4aca853f49e6",
+      link: "https://app.powerbi.com/groups/d214103e-35e4-4091-a11c-017e6dc1aaf7/reports/e995b561-cd1b-4cc8-adb4-8130db75037a?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=664ab333-1815-4a58-81cd-4123c3c5dd25",
       color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
       pattern: "none"
     }
