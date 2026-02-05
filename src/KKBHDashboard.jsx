@@ -827,7 +827,7 @@ const KKBHDashboard = () => {
       id: "bunseki-overall",
       label: "全体感集計",
       icon: "📊",
-      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare",
+      link: "https://app.powerbi.com/groups/cc6d9978-4e6e-4e32-b23b-2300449d052d/reports/63ff6ae8-7049-4138-aaac-424204764a61?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=b2028b0a-905b-4459-bbb8-54af1f7ebf42",
       color: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
       pattern: "none"
     },
@@ -835,7 +835,7 @@ const KKBHDashboard = () => {
       id: "bunseki-division",
       label: "事業部別",
       icon: "🏢",
-      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=399f0be4-720b-445c-b40d-ef60ce044c43",
+      link: "https://app.powerbi.com/groups/cc6d9978-4e6e-4e32-b23b-2300449d052d/reports/63ff6ae8-7049-4138-aaac-424204764a61?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=90dbc101-bfe4-4357-a5c3-ff199dec3c15",
       color: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
       pattern: "none"
     },
@@ -843,7 +843,7 @@ const KKBHDashboard = () => {
       id: "bunseki-jurisdiction",
       label: "所管別",
       icon: "🗂️",
-      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=22b32dfd-a4d7-497b-9417-f66d43954c9a",
+      link: "https://app.powerbi.com/groups/cc6d9978-4e6e-4e32-b23b-2300449d052d/reports/63ff6ae8-7049-4138-aaac-424204764a61?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=751a9260-9a24-4b4e-a10a-2e0902f874bf",
       color: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
       pattern: "none"
     },
@@ -851,7 +851,7 @@ const KKBHDashboard = () => {
       id: "bunseki-monthly",
       label: "年月別",
       icon: "📅",
-      link: "https://app.powerbi.com/groups/fc9ff885-c542-4474-a9d7-befe48b69ad6/reports/f635320c-6a7d-4c2d-bb31-045efa69dd06?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=954b2af7-f890-4dc3-bb4a-9dcff442a8dd",
+      link: "https://app.powerbi.com/groups/cc6d9978-4e6e-4e32-b23b-2300449d052d/reports/63ff6ae8-7049-4138-aaac-424204764a61?ctid=b3af1006-3cc7-43fe-8536-8d9196748a64&pbi_source=linkShare&bookmarkGuid=190a2898-328d-480a-a2e3-12daf0698dc6",
       color: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
       pattern: "none"
     }
